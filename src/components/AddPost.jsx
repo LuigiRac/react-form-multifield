@@ -13,13 +13,14 @@ function AddPost() {
     const [formData, setFormData] = useState(newPost)
 
 
-    function handleSubmit() {
+    function handleSubmit(e) {
 
     }
 
 
     function handleInput() {
-
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        setFormData({ ...formData, [e.target.title]: value })
     }
     return (
 
