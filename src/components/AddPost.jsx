@@ -1,7 +1,19 @@
+import { useState } from "react"
+const newPost = {
+    id: 0,
+    title: "",
+    image: '',
+    content:
+        "",
+    tags: ["html", "css"],
+    published: true,
+}
 
 function AddPost{
 
-    return ()
+    return (
+
+    )
 }
 
 export default AddPost
