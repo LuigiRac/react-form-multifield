@@ -1,7 +1,6 @@
 import CardContent from "./CardContent";
 import Form from "./Form";
 import AddPost from "./AddPost";
-// import posts from "../data/posts";
 
 function MainContent() {
 
@@ -12,7 +11,7 @@ function MainContent() {
             <main className="container ">
                 <CardContent />
 
-                <Form />
+                {/* <Form /> */}
                 <AddPost />
             </main>
         </>
