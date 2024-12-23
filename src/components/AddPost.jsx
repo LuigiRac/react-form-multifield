@@ -10,7 +10,7 @@ const newPost = {
 }
 
 function AddPost{
-
+    const [formData, setFormData] = useState(newPost)
     return (
 
     )
