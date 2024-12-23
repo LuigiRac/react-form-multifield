@@ -39,8 +39,8 @@ function AddPost() {
                 <input type="text"
                     className="form-control"
                     id="image"
-                    value={formData.title}
-                    onChange={(e) => setUserPosts(e.target.value)}
+                    value={formData.image}
+                    onChange={handleInput}
                     name="image"
                 />
                 <button className="btn btn-outline-secondary" type="submit">Insert</button>
@@ -50,9 +50,20 @@ function AddPost() {
                 <input type="text"
                     className="form-control"
                     id="content"
-                    value={formData.title}
-                    onChange={(e) => setUserPosts(e.target.value)}
+                    value={formData.content}
+                    onChange={handleInput}
                     name="content"
+                />
+                <button className="btn btn-outline-secondary" type="submit">Insert</button>
+            </form>
+
+            <form className="d-flex " onSubmit={handleSubmit}>
+                <input type="checkbox"
+                    className="form-control"
+                    id="published"
+                    value={formData.published}
+                    onChange={handleInput}
+                    name="published"
                 />
                 <button className="btn btn-outline-secondary" type="submit">Insert</button>
             </form>
