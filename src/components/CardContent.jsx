@@ -6,7 +6,7 @@ const newPost = {
     image: "",
     content: "",
     tags: [],
-    published: true,
+    published: true
 };
 import AddPost from "./AddPost";
 
@@ -27,6 +27,7 @@ function CardContent() {
         e.preventDefault();
         // console.log(formData);
         setPostList([...posts, { id: self.crypto.randomUUID(), ...formData }]);
+        setFormData(newPost)
         // console.log(id);
         // console.log(e);
 
