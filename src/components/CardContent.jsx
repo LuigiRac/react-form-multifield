@@ -25,8 +25,8 @@ function CardContent() {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formData);
-        // const id = self.crypto.randomUUID();
+        // console.log(formData);
+        setPostList([...posts, { id: self.crypto.randomUUID(), ...formData }]);
         // console.log(id);
         // console.log(e);
 
