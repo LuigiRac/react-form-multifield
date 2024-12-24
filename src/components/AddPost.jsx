@@ -77,7 +77,7 @@ function AddPost() {
                         checked={formData.published}
                     />
                     <label className="form-check-label" htmlFor="avaiable">
-                        Tags posts
+                        Pubblica Post
                     </label>
                 </div>
                 <button type="submit" className="btn btn-primary">
