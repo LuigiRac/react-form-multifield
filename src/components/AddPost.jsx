@@ -1,30 +1,7 @@
-import { useState } from "react"
-
-const newPost = {
-    id: 0,
-    title: "",
-    image: "",
-    content: "",
-    tags: [],
-    published: true,
-};
-
-function AddPost() {
-    const [formData, setFormData] = useState(newPost)
+// import { useState } from "react"
+function AddPost({ handleSubmit, handleInput, formData }) {
 
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log(formData);
-
-
-    }
-
-
-    function handleInput(e) {
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-        setFormData({ ...formData, [e.target.name]: value })
-    }
     return (
 
         <section className="my-4">
@@ -76,9 +53,7 @@ function AddPost() {
                         value={formData.published}
                         checked={formData.published}
                     />
-                    <label className="form-check-label" htmlFor="avaiable">
-                        Pubblica Post
-                    </label>
+                    <h5>Pubblica</h5>
                 </div>
                 <button type="submit" className="btn btn-primary">
                     Submit

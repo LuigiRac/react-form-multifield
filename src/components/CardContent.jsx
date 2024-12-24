@@ -1,14 +1,40 @@
 import { useState } from "react";
 import posts from "../data/posts"
+const newPost = {
+    id: 0,
+    title: "",
+    image: "",
+    content: "",
+    tags: [],
+    published: true,
+};
+import AddPost from "./AddPost";
 
 function CardContent() {
     const [postsList, setPostList] = useState(posts)
+    const [formData, setFormData] = useState(newPost)
 
 
     function deletePost(id) {
-
         setPostList(posts.filter((el) => el.id !== id))
     }
+
+    function handleInput(e) {
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        setFormData({ ...formData, [e.target.name]: value })
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(formData);
+        // const id = self.crypto.randomUUID();
+        // console.log(id);
+        // console.log(e);
+
+
+    }
+    // function savePosts(params) {
+
+    // }
 
     return (
         <>
@@ -29,6 +55,11 @@ function CardContent() {
                 }
 
             </div >
+            <AddPost
+                handleInput={handleInput}
+                handleSubmit={handleSubmit}
+                formData={formData}
+            />
         </>
     )
 };

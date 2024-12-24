@@ -1,6 +1,6 @@
 import CardContent from "./CardContent";
 // import Form from "./Form";
-import AddPost from "./AddPost";
+// import AddPost from "./AddPost";
 
 function MainContent() {
 
@@ -12,7 +12,7 @@ function MainContent() {
                 <CardContent />
 
                 {/* <Form /> */}
-                <AddPost />
+
             </main>
         </>
     );
