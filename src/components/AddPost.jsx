@@ -1,72 +1,88 @@
 import { useState } from "react"
+
 const newPost = {
     id: 0,
     title: "",
-    image: '',
-    content:
-        "",
-    tags: ["html", "css"],
+    image: "",
+    content: "",
+    tags: [],
     published: true,
-}
+};
 
 function AddPost() {
     const [formData, setFormData] = useState(newPost)
 
 
     function handleSubmit(e) {
+        e.preventDefault();
+        console.log(formData);
+
 
     }
 
 
-    function handleInput() {
+    function handleInput(e) {
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-        setFormData({ ...formData, [e.target.title]: value })
+        setFormData({ ...formData, [e.target.name]: value })
     }
     return (
 
-        <section className="input-group my-4">
-            <form className="d-flex " onSubmit={handleSubmit}>
-                <input type="text"
-                    className="form-control"
-                    id="name"
-                    value={formData.title}
-                    onChange={handleInput}
-                    name="name"
-                />
-                <button className="btn btn-outline-secondary" type="submit">Insert</button>
-            </form>
+        <section className="my-4">
+            <h2>Aggiungi nuovo post</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <h5>Titolo del post</h5>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="title"
+                        value={formData.title}
+                        onChange={handleInput}
+                        name="title"
+                    />
+                </div>
 
-            <form className="d-flex " onSubmit={handleSubmit}>
-                <input type="text"
-                    className="form-control"
-                    id="image"
-                    value={formData.image}
-                    onChange={handleInput}
-                    name="image"
-                />
-                <button className="btn btn-outline-secondary" type="submit">Insert</button>
-            </form>
+                <div className="mb-3">
+                    <h5>Immagine del post</h5>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="image"
+                        value={formData.image}
+                        onChange={handleInput}
+                        name="image"
+                    />
+                </div>
 
-            <form className="d-flex " onSubmit={handleSubmit}>
-                <input type="text"
-                    className="form-control"
-                    id="content"
-                    value={formData.content}
-                    onChange={handleInput}
-                    name="content"
-                />
-                <button className="btn btn-outline-secondary" type="submit">Insert</button>
-            </form>
+                <div className="mb-3">
+                    <h5>Contenuto del post</h5>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="content"
+                        value={formData.content}
+                        onChange={handleInput}
+                        name="content"
+                    />
+                </div>
 
-            <form className="d-flex " onSubmit={handleSubmit}>
-                <input type="checkbox"
-                    className="form-control"
-                    id="published"
-                    value={formData.published}
-                    onChange={handleInput}
-                    name="published"
-                />
-                <button className="btn btn-outline-secondary" type="submit">Insert</button>
+                <div className="mb-3 form-check">
+                    <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id="published"
+                        name="published"
+                        onChange={handleInput}
+                        value={formData.published}
+                        checked={formData.published}
+                    />
+                    <label className="form-check-label" htmlFor="avaiable">
+                        Tags posts
+                    </label>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                    Submit
+                </button>
             </form>
         </section>
 

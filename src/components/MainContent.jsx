@@ -1,5 +1,5 @@
 import CardContent from "./CardContent";
-import Form from "./Form";
+// import Form from "./Form";
 import AddPost from "./AddPost";
 
 function MainContent() {
